@@ -1,0 +1,82 @@
+:root {
+  --bg: #ffffff;              /* plain white background */
+  --card-bg: #ffffff;          /* white card */
+  --text-color: #1a1a1a;       /* dark text */
+}
+
+body.dark {
+  --bg: linear-gradient(135deg, #000428, #004e92); /* dark gradient */
+  --card-bg: rgba(0, 0, 0, 0.6);
+  --text-color: #f9f9f9;
+}
+
+
+body, html, #root {
+  height: 100%;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", Arial, sans-serif;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text-color);
+  transition: background 0.4s ease, color 0.3s ease;
+}
+
+.weather-card {
+  background: var(--card-bg);
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;     /* ✅ center all text */
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  backdrop-filter: blur(10px);
+  transition: background 0.3s ease, transform 0.2s ease;
+  width: 600px;
+  min-height: 400px;
+           /* ✅ use flexbox */
+  flex-direction: column; 
+  align-items: center;    /* ✅ horizontal centering */
+  justify-content: center;/* ✅ vertical centering */
+}
+
+
+.weather-card:hover {
+  transform: scale(1.02);     /* subtle Apple-like hover effect */
+}
+
+
+
+.weather-card h2 {
+  margin: 0 0 8px;
+  font-size: 24px;
+}
+
+.weather-card .temp {
+  font-size: 48px;
+  font-weight: bold;
+  margin: 8px 0;
+}
+
+.weather-card .desc {
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+.theme-toggle {
+  margin-top: 20px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.2);
+  color: white;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.theme-toggle:hover {
+  background: rgba(0, 0, 0, 0.35);
+}
